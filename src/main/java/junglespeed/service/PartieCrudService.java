@@ -5,13 +5,18 @@
  */
 package junglespeed.service;
 
+import java.util.List;
+import junglespeed.entity.Partie;
+import junglespeed.enumeration.Statut;
 import org.springframework.data.repository.CrudRepository;
-import junglespeed.entity.Genre;
+
 
 /**
  *
  * @author tom
  */
-public interface GenreCrudService extends CrudRepository<Genre, Long>{
+public interface PartieCrudService extends CrudRepository<Partie, Long>{
+    
+    public List<Partie> findByStatut (Statut statut);
     
 }

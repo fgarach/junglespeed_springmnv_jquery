@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import junglespeed.enumeration.Couleur;
+import junglespeed.enumeration.Etat;
 
 /**
  *
@@ -31,6 +32,9 @@ public class Carte implements Serializable {
     @Enumerated(EnumType.STRING)
     private Couleur couleur;
     
+    @Enumerated(EnumType.STRING)
+    private Etat etat;
+    
     @ManyToOne
     @JoinColumn(name = "UTILISATEUR_ID")
     private Utilisateur utilisateur;
@@ -41,6 +45,38 @@ public class Carte implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Couleur getCouleur() {
+        return couleur;
+    }
+
+    public void setCouleur(Couleur couleur) {
+        this.couleur = couleur;
+    }
+
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    public Etat getEtat() {
+        return etat;
+    }
+
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
+
+    public Carte() {
+    }
+
+    public Carte(Couleur couleur, Etat etat) {
+        this.couleur = couleur;
+        this.etat = etat;
     }
 
     @Override

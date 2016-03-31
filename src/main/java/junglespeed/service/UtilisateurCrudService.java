@@ -5,13 +5,16 @@
  */
 package junglespeed.service;
 
+import junglespeed.entity.Utilisateur;
 import org.springframework.data.repository.CrudRepository;
-import junglespeed.entity.Film;
+
 
 /**
  *
  * @author tom
  */
-public interface FilmCrudService extends CrudRepository<Film, Long>{
+public interface UtilisateurCrudService extends CrudRepository<Utilisateur, Long>{
+    
+    
     
 }

@@ -35,7 +35,7 @@ public class Utilisateur implements Serializable {
     private Partie partie;
     
     @OneToMany(mappedBy = "utilisateur")
-    List<Carte> cartes = new ArrayList<Carte>();
+    private List<Carte> cartes = new ArrayList<Carte>();
 
     public Long getId() {
         return id;
@@ -43,6 +43,38 @@ public class Utilisateur implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Partie getPartie() {
+        return partie;
+    }
+
+    public void setPartie(Partie partie) {
+        this.partie = partie;
+    }
+
+    public List<Carte> getCartes() {
+        return cartes;
+    }
+
+    public void setCartes(List<Carte> cartes) {
+        this.cartes = cartes;
+    }
+
+    public Utilisateur() {
+    }
+
+    public Utilisateur(String nom, Partie partie) {
+        this.nom = nom;
+        this.partie = partie;
     }
 
     @Override
